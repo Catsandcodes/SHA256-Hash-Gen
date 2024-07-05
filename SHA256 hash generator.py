@@ -4,9 +4,9 @@ import hashlib
 
 def get_file_hash():
     root = tk.Tk()
-    root.withdraw()  # Hide the main window
+    root.withdraw()  # Hide main window
 
-    # Ask the user to select a file
+    # Ask the user to select file
     file_path = filedialog.askopenfilename()
 
     if not file_path:
@@ -17,7 +17,7 @@ def get_file_hash():
     with open(file_path, 'rb') as file:
         content = file.read()
 
-    # Calculate the SHA-256 hash
+    # Calculate the hash
     sha256_hash = hashlib.sha256(content).hexdigest()
 
     print(f"SHA-256 hash of '{file_path}': {sha256_hash}")
